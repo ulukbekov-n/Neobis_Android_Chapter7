@@ -51,6 +51,9 @@ class EmailRegisterFragment: Fragment(),View.OnClickListener,View.OnFocusChangeL
             binding.inputEmail.apply {
                 isErrorEnabled = true
                 error = errorMessage
+            binding.regEmail.backgroundTintList =
+                ColorStateList.valueOf(resources.getColor(R.color.purple_700))
+                binding.regEmail.setBackgroundResource(R.drawable.enabled_button)
             }
             binding.regEmail.isEnabled = false
             binding.regEmail.backgroundTintList = ColorStateList.valueOf(resources.getColor(
@@ -58,8 +61,6 @@ class EmailRegisterFragment: Fragment(),View.OnClickListener,View.OnFocusChangeL
         }else {
             binding.inputEmail.isErrorEnabled = false
             binding.regEmail.isEnabled = true
-            binding.regEmail.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
-            binding.regEmail.setBackgroundResource(R.drawable.enabled_button)
         }
         return errorMessage == null
     }
